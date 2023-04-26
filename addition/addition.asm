@@ -6,6 +6,10 @@ segment .data
     input db "%d", 0
     result db "Result is: %i", 0xd, 0xa, 0
 
+; windows uses "\r\n" as end of line marker, the "0" is the basic string terminator
+; "\r" = ASCII 0x0D, "\n" = ASCII 0x0A
+; Linux only uses the \n line termination
+
 segment .bss
     number1 resb 8
     number2 resb 8
